@@ -75,16 +75,18 @@ hr { border: none; border-top: 1px solid var(--rule); margin: 0; }
   height: 72px;
 }
 .brand {
-  display: flex; align-items: baseline; gap: 12px;
-  font-family: var(--serif); font-size: 22px; letter-spacing: -0.01em;
+  display: inline-flex; align-items: center; gap: 12px;
   color: var(--forest-deep);
+  line-height: 0;
 }
-.brand .mark {
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 34px; height: 34px; border-radius: 50%;
-  background: var(--forest); color: var(--paper);
-  font-family: var(--serif); font-size: 15px; letter-spacing: 0;
-  transform: translateY(2px);
+.brand-logo {
+  display: block;
+  height: 44px;
+  width: auto;
+  max-width: 100%;
+}
+@media (max-width: 480px) {
+  .brand-logo { height: 36px; }
 }
 .nav-links {
   display: flex; align-items: center; gap: 28px;

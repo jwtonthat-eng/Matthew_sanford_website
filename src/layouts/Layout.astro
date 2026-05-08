@@ -32,7 +32,15 @@ const navLinks = [
   <body data-screen-label={screenLabel}>
     <header class="nav">
       <div class="container nav-row">
-        <a href="/" class="brand"><span class="mark">MS</span> Matt Sanford</a>
+        <a href="/" class="brand" aria-label="Matt Sanford — home">
+          <img
+            src="/matt-sanford-logo-light.png"
+            alt="Matt Sanford — Strength · Movement · Mind"
+            class="brand-logo"
+            width="909"
+            height="310"
+          />
+        </a>
         <nav class="nav-links" aria-label="Primary">
           {navLinks.map((l) => (
             <a href={l.href} class={active === l.key ? 'active' : ''}>{l.label}</a>
