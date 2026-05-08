@@ -1,0 +1,300 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const totem = [
+  { i: 'i', label: 'Psyche', meta: 'Master input' },
+  { i: 'ii', label: 'Breathing', meta: 'Respiration' },
+  { i: 'iii', label: 'Mastication', meta: 'Jaw, bite' },
+  { i: 'iv', label: 'Vision', meta: '' },
+  { i: 'v', label: 'Auditory', meta: '' },
+  { i: 'vi', label: 'Vestibular', meta: 'Balance' },
+  { i: 'vii', label: 'Upper cervical', meta: '' },
+  { i: 'viii', label: 'Visceral', meta: 'Organs' },
+  { i: 'ix', label: 'Limbic / Emotional', meta: '' },
+];
+---
+<Layout title="How I Coach — Matt Sanford" screenLabel="03 How I Coach" active="coaching">
+  <section class="pagehead">
+    <div class="container">
+      <span class="eyebrow">Methodology</span>
+      <h1>Holistic, individualized, and quietly evidence-based.</h1>
+      <p class="lede">
+        Three frameworks sit underneath every program I write. None of them is
+        new. All of them work.
+      </p>
+    </div>
+  </section>
+
+  <!-- 4 DOCTORS -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">The 4 Doctors</span>
+        <h2>Movement, Quiet, Happiness, Diet — the four inputs that produce a healthy human.</h2>
+      </div>
+      <p style="max-width: 64ch; color: var(--granite); font-size: 18px; line-height: 1.65;">
+        Paul Chek adapted an ancient Greek model of three doctors and added a
+        fourth to address the realities of modern sedentary life. The result
+        is a framework that treats the body the way the body actually works:
+        as a single integrated system. Train one of these and ignore the
+        others, and you'll plateau within a quarter.
+      </p>
+    </div>
+    <div class="wide" style="margin-top: 56px;">
+      <div class="doctors">
+        <div class="doc">
+          <span class="lat">Dr. i</span>
+          <h3>Movement</h3>
+          <p>
+            Appropriate physical activity, daily and varied — and just as
+            importantly, regenerative movement. The primary domain of my work.
+          </p>
+        </div>
+        <div class="doc">
+          <span class="lat">Dr. ii</span>
+          <h3>Quiet</h3>
+          <p>
+            Rest, sleep, regeneration, introspection. The lever where training
+            stress either becomes adaptation or just accumulates as fatigue.
+          </p>
+        </div>
+        <div class="doc">
+          <span class="lat">Dr. iii</span>
+          <h3>Happiness</h3>
+          <p>
+            Mind, emotions, alignment with core values. Meaning and fulfillment
+            as inputs to physical health, not as extras around it.
+          </p>
+        </div>
+        <div class="doc">
+          <span class="lat">Dr. iv</span>
+          <h3>Diet</h3>
+          <p>
+            Individualized nutrition. Not the focus of my practice — for
+            medical nutrition therapy I refer out to a registered dietitian.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOTEM POLE -->
+  <section style="background: var(--forest-deep); color: var(--dune-soft);">
+    <div class="container">
+      <div class="split">
+        <div class="split-text">
+          <span class="eyebrow" style="color: color-mix(in srgb, var(--dune) 70%, transparent);">
+            The CHEK Totem Pole
+          </span>
+          <h2 style="color: var(--paper); margin-top: 18px;">
+            Why we don't start with the squat.
+          </h2>
+          <p style="color: color-mix(in srgb, var(--dune) 90%, transparent); font-size: 18px; line-height: 1.65; margin-top: 24px;">
+            Designed by Paul Chek around 1994, the Totem Pole ranks the order
+            in which the brain prioritizes the body's systems for survival. It
+            is the reason a CHEK practitioner does not start a client with
+            squats. You correct what the brain prioritizes first, or downstream
+            training will not stick.
+          </p>
+          <p style="color: color-mix(in srgb, var(--dune) 90%, transparent); font-size: 18px; line-height: 1.65;">
+            In practice, this is why a CHEK assessment goes well beyond a
+            movement screen. Headaches, hip pain, plateaued progress — there's
+            almost always an upstream cause.
+          </p>
+        </div>
+        <div>
+          <ol style="list-style:none; padding: 0; margin: 0; display: grid; gap: 0; border-left: 1px solid color-mix(in srgb, var(--dune) 30%, transparent); padding-left: 24px;">
+            {totem.map((t, idx) => (
+              <li style={`padding: 14px 0; ${idx < totem.length - 1 ? 'border-bottom: 1px solid color-mix(in srgb, var(--dune) 18%, transparent);' : ''} display:flex; gap: 18px; align-items:baseline;`}>
+                <span style="font-family: var(--serif); font-style: italic; color: color-mix(in srgb, var(--dune) 60%, transparent); width: 28px;">{t.i}</span>
+                <span style="font-family: var(--serif); font-size: 22px; color: var(--paper);">{t.label}</span>
+                {t.meta && (
+                  <span style="margin-left:auto; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--dune) 55%, transparent);">{t.meta}</span>
+                )}
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 PRIMAL PATTERNS -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">7 Primal Patterns</span>
+        <h2>The vocabulary of human movement.</h2>
+      </div>
+      <p style="max-width: 64ch; color: var(--granite); font-size: 18px; line-height: 1.65; margin-bottom: 48px;">
+        The seven primal patterns are the fundamental movements every healthy
+        human should be able to perform pain-free, through a full range of
+        motion. They mirror infant development and ancestral survival
+        movement. Pick up a kettlebell, step off a granite ledge, and you'll
+        find them all.
+      </p>
+      <div class="patterns">
+        <div class="pat">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 18 L12 12 L20 18 M4 18 L4 6 M20 18 L20 6"/></svg>
+          <h4>Bend</h4>
+          <p>Hip hinge — picking something up off the floor.</p>
+        </div>
+        <div class="pat">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20 L12 14 L20 20 M8 14 L8 4 L16 4 L16 14"/></svg>
+          <h4>Squat</h4>
+          <p>Hips below knees — sitting, fire-tending, deep rest.</p>
+        </div>
+        <div class="pat">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20 L9 12 L13 18 L20 6"/></svg>
+          <h4>Lunge</h4>
+          <p>Single-leg loaded step — climbing, stepping over.</p>
+        </div>
+        <div class="pat">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12 L20 12 M16 8 L20 12 L16 16"/></svg>
+          <h4>Push</h4>
+          <p>Pressing away from the body.</p>
+        </div>
+        <div class="pat">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 12 L4 12 M8 8 L4 12 L8 16"/></svg>
+          <h4>Pull</h4>
+          <p>Pulling toward the body.</p>
+        </div>
+        <div class="pat">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 4 L12 20 M5 9 a8 8 0 0 0 14 0 M5 15 a8 8 0 0 1 14 0"/></svg>
+          <h4>Twist</h4>
+          <p>Rotating through the trunk.</p>
+        </div>
+        <div class="pat">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 19 L9 13 L11 16 L15 9 L17 12 L20 5"/></svg>
+          <h4>Gait</h4>
+          <p>Locomotion — walking, running, hiking.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE TRANSLATION -->
+  <section style="background: var(--paper-warm);">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">In the Mountains</span>
+        <h2>The seven patterns, translated.</h2>
+      </div>
+      <div class="prose" style="max-width: 72ch;">
+        <p>
+          Hiking the Whites is itself a stress test of the seven Primal
+          Patterns, of VO₂max, of recovery and glycemic management. Every
+          credential I list connects to a specific moment on the mountain.
+        </p>
+        <ul>
+          <li>
+            <strong>Bend / Squat / Lunge.</strong> Hip and knee mechanics on
+            uneven granite. The unglamorous mid-block work that makes the
+            descent off Mt. Washington something other than a sufferfest.
+          </li>
+          <li>
+            <strong>Push / Pull.</strong> Pole and pack work; load carriage;
+            thoracic mobility under fatigue.
+          </li>
+          <li>
+            <strong>Twist.</strong> Trunk stability on talus and scree — the
+            under-trained pattern most weekend hikers neglect.
+          </li>
+          <li>
+            <strong>Gait.</strong> Low and slow Zone 2 to build the volume
+            base, plus high-intensity intervals to raise the VO₂max ceiling
+            that turns a hard day into a sustainable one.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODERN SCIENCE -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">The Modern Evidence</span>
+        <h2>Two landmark documents define the current evidence base.</h2>
+      </div>
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+        <article style="border: 1px solid var(--rule); padding: 36px 32px 40px; background: var(--paper);">
+          <span class="tag">2025</span>
+          <h3 style="margin-top: 18px; font-size: 26px;">
+            ACSM GETP 12 — Guidelines for Exercise Testing &amp; Prescription, 12th edition
+          </h3>
+          <p style="color: var(--granite); margin-top: 14px; font-size: 16px;">
+            Released in 2025 and reflected on certification exams since July
+            of that year. Expanded sections on resistance training and
+            behavior change. New coverage on sex differences, gender-diverse
+            populations, POTS, MASLD, ME/CFS, and pediatric cardiac
+            conditions. More guidance on application in real-world settings.
+          </p>
+        </article>
+        <article style="border: 1px solid var(--rule); padding: 36px 32px 40px; background: var(--forest-deep); color: var(--dune-soft);">
+          <span class="tag" style="border-color: color-mix(in srgb, var(--dune) 35%, transparent); color: color-mix(in srgb, var(--dune) 80%, transparent);">2026</span>
+          <h3 style="margin-top: 18px; font-size: 26px; color: var(--paper);">
+            ACSM Resistance Training Position Stand
+          </h3>
+          <p style="color: color-mix(in srgb, var(--dune) 90%, transparent); margin-top: 14px; font-size: 16px;">
+            The first major update in 17 years. Synthesized 137 systematic
+            reviews of more than 30,000 participants. The headline: heavy
+            enough loads (≥80% 1RM), full range, 2–3 sets, ≥2 sessions per
+            week, ideally placed at the start of a session.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ASSESSMENT FLOW -->
+  <section style="background: var(--dune);">
+    <div class="container">
+      <span class="eyebrow">The Assessment</span>
+      <h2 style="margin-top: 14px; max-width: 22ch;">
+        Ninety minutes. We start with breathing.
+      </h2>
+      <ol style="list-style:none; padding: 0; margin: 48px 0 0; display:grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule);">
+        <li style="background: var(--dune); padding: 32px 28px;">
+          <span style="font-family: var(--serif); font-style:italic; color: var(--granite-soft); font-size: 14px;">Step i</span>
+          <h3 style="margin-top: 8px; font-size: 22px;">Conversation</h3>
+          <p style="color: var(--granite); font-size: 14px; margin-top: 10px;">
+            Goals, history, sleep, stress, the body parts that whisper.
+          </p>
+        </li>
+        <li style="background: var(--dune); padding: 32px 28px;">
+          <span style="font-family: var(--serif); font-style:italic; color: var(--granite-soft); font-size: 14px;">Step ii</span>
+          <h3 style="margin-top: 8px; font-size: 22px;">Breath &amp; Posture</h3>
+          <p style="color: var(--granite); font-size: 14px; margin-top: 10px;">
+            Where the Totem Pole says we have to start, and almost no one does.
+          </p>
+        </li>
+        <li style="background: var(--dune); padding: 32px 28px;">
+          <span style="font-family: var(--serif); font-style:italic; color: var(--granite-soft); font-size: 14px;">Step iii</span>
+          <h3 style="margin-top: 8px; font-size: 22px;">Movement Screen</h3>
+          <p style="color: var(--granite); font-size: 14px; margin-top: 10px;">
+            Primal Pattern assessment plus FMS — a clear picture of what's working.
+          </p>
+        </li>
+        <li style="background: var(--dune); padding: 32px 28px;">
+          <span style="font-family: var(--serif); font-style:italic; color: var(--granite-soft); font-size: 14px;">Step iv</span>
+          <h3 style="margin-top: 8px; font-size: 22px;">A Plan You Can Read</h3>
+          <p style="color: var(--granite); font-size: 14px; margin-top: 10px;">
+            A short written summary in plain English. Yours to keep, with or without me.
+          </p>
+        </li>
+      </ol>
+      <p class="kicker" style="margin-top: 36px;">
+        Every program is individualized. No two programs are the same.
+      </p>
+    </div>
+  </section>
+
+  <section style="text-align:center;">
+    <div class="container">
+      <a href="/contact" class="btn btn-primary">
+        Book a movement assessment <span class="arrow">→</span>
+      </a>
+    </div>
+  </section>
+</Layout>

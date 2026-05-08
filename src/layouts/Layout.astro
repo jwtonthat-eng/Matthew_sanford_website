@@ -1,0 +1,96 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  screenLabel?: string;
+  active?: 'home' | 'about' | 'coaching' | 'work' | 'notes' | 'contact' | null;
+}
+
+const { title, screenLabel, active = null } = Astro.props;
+const navLinks = [
+  { href: '/', label: 'Home', key: 'home' },
+  { href: '/about', label: 'About', key: 'about' },
+  { href: '/coaching', label: 'How I Coach', key: 'coaching' },
+  { href: '/work', label: 'Work With Me', key: 'work' },
+  { href: '/notes', label: 'Field Notes', key: 'notes' },
+];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&family=Inter+Tight:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body data-screen-label={screenLabel}>
+    <header class="nav">
+      <div class="container nav-row">
+        <a href="/" class="brand"><span class="mark">MS</span> Matt Sanford</a>
+        <nav class="nav-links" aria-label="Primary">
+          {navLinks.map((l) => (
+            <a href={l.href} class={active === l.key ? 'active' : ''}>{l.label}</a>
+          ))}
+        </nav>
+      </div>
+    </header>
+
+    <slot />
+
+    <footer class="footer">
+      <div class="container">
+        <h3>Strong is a long game.</h3>
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h5>Matt Sanford</h5>
+            <p
+              style="font-family: var(--serif); font-size: 17px; line-height: 1.45; color: var(--dune-soft); max-width: 32ch;"
+            >
+              CHEK-certified physical trainer. Coaching out of the North Shore,
+              Massachusetts. Hiking the New England high peaks since 2014.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h5>Site</h5>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/coaching">How I Coach</a></li>
+              <li><a href="/work">Work With Me</a></li>
+              <li><a href="/notes">Field Notes</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Reach Out</h5>
+            <ul>
+              <li><a href="mailto:matt@example.com">matt@example.com</a></li>
+              <li>(978) 555-0142</li>
+              <li>By appointment only</li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Elsewhere</h5>
+            <ul>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">Strava</a></li>
+              <li><a href="#">Substack</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 Matt Sanford. All rights reserved.</span>
+          <span class="credit">
+            Photography commissioned on the trails it depicts.
+          </span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,143 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const posts = [
+  {
+    date: 'Apr 04, 2026',
+    tag: 'Type 1',
+    title: 'The two-day rule for T1D and exercise.',
+    body:
+      'A single bout of training writes glucose dynamics into the next 24–48 hours. What that means for programming, dosing, and how to think about a hard hike on a Saturday.',
+    read: '8 min',
+  },
+  {
+    date: 'Mar 17, 2026',
+    tag: 'Hiking',
+    title: 'How I trained for the Pemi Loop.',
+    body:
+      'A twelve-week block built around eccentric loading, Zone 2, and the unglamorous work of teaching ankles to listen to talus.',
+    read: '11 min',
+  },
+  {
+    date: 'Feb 22, 2026',
+    tag: 'Recovery',
+    title: 'Sleep is the program.',
+    body:
+      'The CHEK Dr. Quiet framing meets the modern recovery literature. Why a single short night costs more than most people think — and what to do about it during a heavy training block.',
+    read: '7 min',
+  },
+  {
+    date: 'Jan 30, 2026',
+    tag: 'Methodology',
+    title: 'Reading the 2026 ACSM position stand without losing the plot.',
+    body:
+      '137 systematic reviews. 30,000 participants. Six things actually changed about how I program for adults — and several things didn\'t.',
+    read: '9 min',
+  },
+  {
+    date: 'Dec 18, 2025',
+    tag: 'Hiking',
+    title: 'A descent is its own training problem.',
+    body:
+      'Coming down off Mt. Washington is the part that breaks legs. Eccentric loading is the prep nobody trains.',
+    read: '6 min',
+  },
+  {
+    date: 'Nov 02, 2025',
+    tag: 'Type 1',
+    title: 'A CGM, a kettlebell, and the order of things.',
+    body:
+      'When you combine resistance and aerobic work, the order matters. What the CGM showed me about three months of careful experimenting with sequence.',
+    read: '10 min',
+  },
+];
+---
+<Layout title="Field Notes — Matt Sanford" screenLabel="05 Field Notes" active="notes">
+  <section class="pagehead">
+    <div class="container">
+      <span class="eyebrow">Field Notes</span>
+      <h1>Slow writing about strength, sleep, and the long game.</h1>
+      <p class="lede">
+        Quality over frequency. Most months there's nothing new. When there
+        is, it lives here.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <article style="display:grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items:end; padding-bottom: 64px; border-bottom: 1px solid var(--rule);">
+        <div>
+          <div class="meta" style="display:flex; gap: 14px; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--granite); margin-bottom: 18px;">
+            <span>Featured</span><span>·</span><span>Methodology</span><span>·</span><span>Apr 2026</span>
+          </div>
+          <h2 style="font-size: clamp(36px, 4.4vw, 56px); line-height: 1.05; max-width: 18ch;">
+            What a CHEK assessment actually looks like.
+          </h2>
+          <p style="margin-top: 24px; color: var(--granite); font-size: 18px; line-height: 1.6; max-width: 50ch;">
+            The intake takes ninety minutes. We start with breathing and end
+            with the squat. Here's why that order matters more than most
+            clients expect — and what you'll actually leave with.
+          </p>
+          <a href="#" class="btn btn-ghost" style="margin-top: 24px;">Read · 6 min <span class="arrow">→</span></a>
+        </div>
+        <div
+          class="photo-frame wide"
+          style="aspect-ratio: 5/4; background-image: url('https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1400&q=80&auto=format&fit=crop')"
+        >
+          <div class="label">Studio · The first ten minutes</div>
+        </div>
+      </article>
+
+      <div style="margin-top: 80px;">
+        <div style="display:flex; align-items:baseline; justify-content: space-between; margin-bottom: 36px; padding-bottom: 16px; border-bottom: 1px solid var(--rule);">
+          <h2 style="font-size: 32px;">All notes</h2>
+          <div style="display: flex; gap: 18px; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--granite);">
+            <a href="#" style="color: var(--forest-deep); border-bottom: 1px solid currentColor; padding-bottom: 2px;">All</a>
+            <a href="#">Methodology</a>
+            <a href="#">Type 1</a>
+            <a href="#">Hiking</a>
+            <a href="#">Recovery</a>
+          </div>
+        </div>
+
+        <div style="display: grid; gap: 0;">
+          {posts.map((p) => (
+            <a href="#" style="display:grid; grid-template-columns: 140px 1fr 200px; gap: 32px; align-items:start; padding: 28px 0; border-bottom: 1px solid var(--rule);">
+              <span style="font-family: var(--serif); font-style: italic; color: var(--granite-soft); font-size: 15px;">{p.date}</span>
+              <div>
+                <span class="tag" style="margin-bottom: 12px;">{p.tag}</span>
+                <h3 style="margin-top: 12px; font-size: 28px; line-height: 1.18; max-width: 28ch;">{p.title}</h3>
+                <p style="color: var(--granite); margin-top: 10px; font-size: 16px; max-width: 56ch;">{p.body}</p>
+              </div>
+              <span style="text-align: right; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--forest);">Read · {p.read} →</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--paper-warm);">
+    <div class="container" style="display:grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items:center;">
+      <div>
+        <span class="eyebrow">Subscribe</span>
+        <h2 style="margin-top: 14px;">Get the next note when there's one to send.</h2>
+        <p style="margin-top: 18px; color: var(--granite); font-size: 17px; max-width: 50ch;">
+          Most months there's nothing. When there's something worth saying,
+          it shows up in your inbox. No tracking pixels, no upsells, no
+          automated drip sequences. Just the note.
+        </p>
+      </div>
+      <form class="form" style="max-width: none;">
+        <div class="field">
+          <label>Email</label>
+          <input type="email" placeholder="you@somewhere" />
+        </div>
+        <button type="button" class="btn btn-primary" style="justify-self:start;">
+          Subscribe <span class="arrow">→</span>
+        </button>
+      </form>
+    </div>
+  </section>
+</Layout>
